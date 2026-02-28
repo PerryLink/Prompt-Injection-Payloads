@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+src/prompt_injection_payloads/__init__.py
+src/prompt_injection_payloads/__main__.py
+src/prompt_injection_payloads/cli.py
+src/prompt_injection_payloads/core.py
+src/prompt_injection_payloads.egg-info/PKG-INFO
+src/prompt_injection_payloads.egg-info/SOURCES.txt
+src/prompt_injection_payloads.egg-info/dependency_links.txt
+src/prompt_injection_payloads.egg-info/entry_points.txt
+src/prompt_injection_payloads.egg-info/requires.txt
+src/prompt_injection_payloads.egg-info/top_level.txt
+src/prompt_injection_payloads/data/payloads.json
+tests/test_cli.py
+tests/test_core.py

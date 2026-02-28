@@ -1,0 +1,2 @@
+[console_scripts]
+pipayloads = prompt_injection_payloads.cli:main

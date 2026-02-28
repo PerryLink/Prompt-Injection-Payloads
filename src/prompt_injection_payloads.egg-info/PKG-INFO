@@ -1,0 +1,168 @@
+Metadata-Version: 2.4
+Name: prompt-injection-payloads
+Version: 0.1.0
+Summary: A collection of prompt injection payloads for AI security testing
+Author-email: Your Name <your.email@example.com>
+License: MIT
+Keywords: ai,security,prompt-injection,llm,testing
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: click>=8.0.0
+Requires-Dist: rich>=10.0.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: pytest-cov>=3.0.0; extra == "dev"
+Dynamic: license-file
+
+# Prompt Injection Payloads
+
+一个用于 AI 安全测试的提示词注入攻击样本库。
+
+## 🎯 项目简介
+
+`prompt-injection-payloads` 是一个轻量级的 Python CLI 工具,提供 100+ 种已知的 AI 攻击 payload 数据库,帮助开发者测试和加固自己的 AI 应用。
+
+### 核心特性
+
+- 📦 25+ 种精心整理的攻击样本
+- 🎨 美观的命令行界面(基于 Rich)
+- 🔍 强大的搜索和过滤功能
+- 🎲 随机测试模式
+- 📚 5 大攻击类别覆盖
+
+## 📦 安装
+
+```bash
+pip install prompt-injection-payloads
+```
+
+或从源码安装:
+
+```bash
+git clone https://github.com/yourusername/prompt-injection-payloads.git
+cd prompt-injection-payloads
+pip install -e .
+```
+
+## 🚀 快速开始
+
+### 列出所有 payload
+
+```bash
+pipayloads list
+```
+
+### 按类别过滤
+
+```bash
+pipayloads list --category role-hijacking
+```
+
+### 关键词搜索
+
+```bash
+pipayloads list --search DAN
+```
+
+### 按严重程度过滤
+
+```bash
+pipayloads list --severity high
+```
+
+### 查看详细信息
+
+```bash
+pipayloads show rh-001
+```
+
+### 随机获取一个 payload
+
+```bash
+pipayloads random
+```
+
+### 从指定类别随机获取
+
+```bash
+pipayloads random --category jailbreak
+```
+
+## 📋 攻击类别
+
+### 1. 角色劫持 (role-hijacking)
+试图让 AI 扮演不受限制的角色,如 DAN 模式、Developer Mode 等。
+
+### 2. 指令注入 (instruction-injection)
+试图覆盖或修改原有系统指令。
+
+### 3. 越狱提示 (jailbreak)
+通过各种技巧绕过安全限制。
+
+### 4. 信息泄露 (information-leakage)
+试图提取系统信息或配置。
+
+### 5. 提示词泄露 (prompt-leaking)
+试图泄露原始提示词或系统消息。
+
+## 🎯 使用场景
+
+- **安全测试**: 测试你的 AI 应用是否存在提示词注入漏洞
+- **研究学习**: 了解常见的 AI 攻击手法
+- **防御加固**: 基于已知攻击样本改进你的防御策略
+
+## ⚠️ 免责声明
+
+本工具仅用于**合法的安全测试和教育目的**。使用者需确保:
+
+- 仅在自己拥有或获得授权的系统上进行测试
+- 不得用于任何恶意攻击或非法活动
+- 遵守相关法律法规和道德规范
+
+作者不对任何滥用行为承担责任。
+
+## 🤝 贡献
+
+欢迎贡献新的 payload! 请遵循以下步骤:
+
+1. Fork 本仓库
+2. 在 `src/prompt_injection_payloads/data/payloads.json` 中添加新的 payload
+3. 确保 JSON 格式正确
+4. 提交 Pull Request
+
+### Payload 格式
+
+```json
+{
+  "id": "xx-001",
+  "name": "攻击名称",
+  "payload": "实际的攻击文本...",
+  "description": "详细描述",
+  "tags": ["tag1", "tag2"],
+  "severity": "high|medium|low",
+  "references": ["https://..."]
+}
+```
+
+## 📄 许可证
+
+MIT License - 详见 [LICENSE](LICENSE) 文件
+
+## 🔗 相关资源
+
+- [OWASP LLM Top 10](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
+- [Jailbreak Chat](https://www.jailbreakchat.com/)
+- [Prompt Injection Primer](https://github.com/jthack/PIPE)
+
+## 📧 联系方式
+
+如有问题或建议,请提交 [Issue](https://github.com/yourusername/prompt-injection-payloads/issues)。
