@@ -2,7 +2,7 @@
 
 # Prompt-Injection-Payloads
 
-**A curated database of 25 prompt-injection attack payloads across 5 categories for AI security testing.**
+**A lightweight CLI over a curated database of 25 prompt-injection attack payloads across 5 categories for AI security testing.**
 
 *Ported into [dsh-defend](https://github.com/PerryLink/dsh-defend) — part of the PerryLink DSH Plugin Family.*
 
@@ -20,17 +20,29 @@ Prompt-Injection-Payloads provides a lightweight CLI over a JSON database of rea
 
 ## Features
 
-- **25 attack payloads** — curated real-world prompt-injection samples
-- **5 categories** — role hijacking, instruction injection, jailbreak, information leakage, prompt leaking
+- **25 attack payloads** — curated collection of real-world prompt-injection attacks
+- **Beautiful CLI** — Rich terminal interface with colored output
 - **Powerful filtering** — search by category, keyword, or severity
-- **Random testing** — pull a random payload (optionally from one category)
-- **Rich CLI** — colored terminal output
+- **Random testing** — get random payloads for quick testing
+- **5 attack categories** — comprehensive coverage of attack vectors
 
 ## Quick start
 
 ```bash
 pip install prompt-injection-payloads
+```
 
+Or install from source:
+
+```bash
+git clone https://github.com/PerryLink/prompt-injection-payloads.git
+cd prompt-injection-payloads
+pip install -e .
+```
+
+### Basic usage
+
+```bash
 # List all payloads
 pipayloads list
 
@@ -43,7 +55,7 @@ pipayloads list --search DAN
 # Filter by severity (high/medium/low)
 pipayloads list --severity high
 
-# Show one payload in full
+# Show payload details
 pipayloads show rh-001
 
 # Get a random payload
@@ -54,13 +66,11 @@ pipayloads random
 
 ### Attack categories
 
-| Category | CLI id | Description |
-|----------|--------|-------------|
-| Role Hijacking | `role-hijacking` | Makes the AI assume unrestricted roles (DAN mode, developer mode, …) |
-| Instruction Injection | `instruction-injection` | Overrides or modifies the original system instructions |
-| Jailbreak | `jailbreak` | Bypasses security restrictions with various techniques |
-| Information Leakage | `information-leakage` | Extracts system information or configuration |
-| Prompt Leaking | `prompt-leaking` | Leaks the original prompt or system message |
+1. **Role Hijacking** (`role-hijacking`) — attempts to make AI assume unrestricted roles like DAN mode, Developer Mode, etc.
+2. **Instruction Injection** (`instruction-injection`) — attempts to override or modify original system instructions.
+3. **Jailbreak** (`jailbreak`) — uses various techniques to bypass security restrictions.
+4. **Information Leakage** (`information-leakage`) — attempts to extract system information or configuration.
+5. **Prompt Leaking** (`prompt-leaking`) — attempts to leak original prompts or system messages.
 
 ### Command reference
 
@@ -69,10 +79,25 @@ pipayloads random
 | `pipayloads list` | List all payloads |
 | `pipayloads list --category <name>` | Filter by category |
 | `pipayloads list --search <keyword>` | Search by keyword |
-| `pipayloads list --severity <level>` | Filter by severity |
-| `pipayloads show <id>` | Show full payload details |
+| `pipayloads list --severity <level>` | Filter by severity (high/medium/low) |
+| `pipayloads show <id>` | Show payload details |
 | `pipayloads random` | Get a random payload |
 | `pipayloads random --category <name>` | Get a random payload from a category |
+
+## Use cases
+
+- **Security testing** — test your AI applications for prompt-injection vulnerabilities
+- **Research & learning** — understand common AI attack techniques
+- **Defense hardening** — improve your defense strategies based on known attacks
+
+## Tech stack
+
+- **Language**: Python 3.8+
+- **CLI framework**: Click
+- **Terminal UI**: Rich
+- **Data format**: JSON
+- **Testing**: pytest
+- **Package management**: setuptools + pyproject.toml
 
 ## Development
 
@@ -81,10 +106,33 @@ pip install -e .[dev]
 pytest
 ```
 
+## Related
+
+- [dsh-defend](https://github.com/PerryLink/dsh-defend) — the DSH plugin this project was ported into
+- [PerryLink](https://github.com/PerryLink) — the PerryLink DSH plugin family
+
+## Related resources
+
+- [OWASP LLM Top 10](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
+- [Jailbreak Chat](https://www.jailbreakchat.com/)
+- [Prompt Injection Primer](https://github.com/jthack/PIPE)
+
+## Contributing
+
+Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+
 ## License
 
 [Apache License 2.0](LICENSE) © 2026 PerryLink
 
 ---
 
-**Legal security testing and educational use only.** Only test systems you own or are authorized to test.
+## Disclaimer
+
+⚠️ **IMPORTANT** — This tool is for **legal security testing and educational purposes only**. Users must ensure:
+
+- Only test on systems you own or have explicit authorization to test
+- Do not use for any malicious attacks or illegal activities
+- Comply with all relevant laws and regulations
+
+The author is not responsible for any misuse of this tool.
