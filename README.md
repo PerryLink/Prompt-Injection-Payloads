@@ -1,6 +1,7 @@
 <div align="center">
 
 # Prompt-Injection-Payloads
+[![Gitee](https://img.shields.io/badge/Gitee-mirror-c71d23?logo=gitee)](https://gitee.com/perrylink/prompt-injection-payloads)
 
 **A lightweight CLI over a curated database of 25 prompt-injection attack payloads across 5 categories for AI security testing.**
 
