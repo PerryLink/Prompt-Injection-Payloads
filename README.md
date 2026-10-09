@@ -30,7 +30,8 @@ Prompt-Injection-Payloads provides a lightweight CLI over a JSON database of rea
 ## Quick start
 
 ```bash
-pip install prompt-injection-payloads
+pip install "git+https://github.com/PerryLink/Prompt-Injection-Payloads.git"
+# (installs from source; not yet on PyPI)
 ```
 
 Or install from source:

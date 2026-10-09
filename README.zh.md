@@ -29,7 +29,8 @@ Prompt-Injection-Payloads 在一个 JSON 数据库中收录真实世界的提示
 ## 快速开始
 
 ```bash
-pip install prompt-injection-payloads
+pip install "git+https://github.com/PerryLink/Prompt-Injection-Payloads.git"
+# （PyPI 未发布，源码直装）
 ```
 
 或从源码安装：
